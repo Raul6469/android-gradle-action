@@ -1,7 +1,7 @@
 FROM runmymind/docker-android-sdk:alpine-standalone
 
 LABEL "com.github.actions.name"="Gradle Android"
-LABEL "com.github.actions.description"="Run Android 28 Gradle tasks"
+LABEL "com.github.actions.description"="Run Android Gradle tasks"
 LABEL "com.github.actions.icon"="play"
 LABEL "com.github.actions.color"="green"
 
