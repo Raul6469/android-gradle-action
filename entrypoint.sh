@@ -3,10 +3,12 @@ set -eu
 
 chmod +x ./gradlew
 
-if [ -n "$ANDROID_LICENCE" ]; then
+if [ -n "$1" ]; then
     mkdir -p $ANDROID_HOME/licenses
-    echo -e $ANDROID_LICENCE >> $ANDROID_HOME/licenses/android-sdk-license
-    echo "Licences accepted"
+    echo -e $1 >> $ANDROID_HOME/licenses/android-sdk-license
+    echo $"\nLicences accepted"
 fi
 
-sh -c "./gradlew $*"
+echo $"\n--> Running './gradlew $2'\n"
+
+sh -c "./gradlew $2"

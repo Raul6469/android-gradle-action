@@ -1,24 +1,41 @@
 # android-gradle-action
 
-Run Android Gradle tasks with GitHub Actions
+Run Android Gradle tasks with GitHub Actions.
 
-## Usage
+## Note
+This action may not be required to run Android builds.
 
-You may need to provide your own Android licence in order to run the action. You can find it on your own machine in the `$ANDROID_HOME/license` folder, and add the file content as a GitHub secret named `$ANDROID_LICENCE`.
+Instead, you can simply try to execute the gradle wrapper in the GitHub action VM with :
+
+```yaml
+- name: Run tests
+  run: ./gradlew test
+```
 
 ## Example
 
-```
-workflow "Testing" {
-  on = "push"
-  resolves = [
-    "Unit tests",
-  ]
-}
+```yaml
+name: CI
 
-action "Unit tests" {
-  uses = "Raul6469/android-gradle-action@master"
-  secrets = ["ANDROID_LICENCE"]
-  args = "test"
-}
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run Gradle command
+      uses: Raul6469/android-gradle-action@2.0.0
+      with:
+        # The gradle command you wish to run (required)
+        # Here, `./gradlew test` will be run
+        script: test
+
+        # In some cases, you may need to provide
+        # Android licence agreement id
+        # You can find it on your own machine under `$ANDROID_HOME/license`,
+        # and add the file content as a GitHub secret named `$ANDROID_LICENCE`.
+        android-licence: ${{ secrets.ANDROID_LICENCE }}
 ```

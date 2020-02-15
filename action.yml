@@ -1,0 +1,22 @@
+name: 'Gradle Android'
+description: 'Run Android Gradle tasks'
+
+author: "Raul6469 <raul6469@outlook.com>"
+
+branding:
+  color: green
+  icon: play
+
+inputs:
+  script:
+    description: 'The ./gradlew command arguments'
+    required: true
+  android-licence:
+    description: 'Your Android license agreement id'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.android-licence }}
+    - ${{ inputs.script }}
