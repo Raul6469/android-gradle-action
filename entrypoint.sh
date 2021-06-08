@@ -1,7 +1,4 @@
-#!/bin/bash -l
-set -eu
-
-chmod +x ./gradlew
+#!/bin/bash
 
 if [ -n "$1" ]; then
     mkdir -p $ANDROID_HOME/licenses
@@ -9,6 +6,6 @@ if [ -n "$1" ]; then
     echo $"\nLicences accepted"
 fi
 
-echo $"\n--> Running './gradlew $2'\n"
+echo -e "\n--> Running 'sh gradlew $2'\n"
 
-sh -c "./gradlew $2"
+sh gradlew $2

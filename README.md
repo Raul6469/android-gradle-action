@@ -15,7 +15,7 @@ Instead, you can simply try to execute the gradle wrapper in the GitHub action V
 ## Example
 
 ```yaml
-name: CI
+name: Android Gradle CI
 
 on: [push]
 
@@ -27,7 +27,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run Gradle command
-      uses: Raul6469/android-gradle-action@2.0.0
+      uses: jojo243/android-gradle-action@2.0.0
       with:
         # The gradle command you wish to run (required)
         # Here, `./gradlew test` will be run
@@ -35,7 +35,8 @@ jobs:
 
         # In some cases, you may need to provide
         # Android licence agreement id
-        # You can find it on your own machine under `$ANDROID_HOME/license`,
+        # You can find it on your own machine under
+        # `$ANDROID_HOME/licenses/android-sdk-license`,
         # and add the file content as a GitHub secret named `$ANDROID_LICENCE`.
         android-licence: ${{ secrets.ANDROID_LICENCE }}
 ```

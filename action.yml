@@ -1,7 +1,5 @@
-name: 'Gradle Android'
+name: 'Run gradle task'
 description: 'Run Android Gradle tasks'
-
-author: "Raul6469 <raul6469@outlook.com>"
 
 branding:
   color: green
