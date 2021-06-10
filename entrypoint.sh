@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ -n "$1" ]; then
-    mkdir -p $ANDROID_HOME/licenses
-    echo -e $1 >> $ANDROID_HOME/licenses/android-sdk-license
-    echo -e "\n--> Licences accepted\n"
+    mkdir -p /opt/licenses
+    echo -e $1 >> /opt/licenses/android-sdk-license
+    echo -e "\n--> Licenses accepted"
 fi
 
 echo -e "\n--> Running 'sh gradlew $2'\n"

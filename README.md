@@ -34,9 +34,9 @@ jobs:
         script: test
 
         # In some cases, you may need to provide
-        # Android licence agreement id
+        # Android license agreement id
         # You can find it on your own machine under
         # `$ANDROID_HOME/licenses/android-sdk-license`,
-        # and add the file content as a GitHub secret named `$ANDROID_LICENCE`.
-        android-licence: ${{ secrets.ANDROID_LICENCE }}
+        # and add the file content as a GitHub secret named `$ANDROID_LICENSE`.
+        android-license: ${{ secrets.ANDROID_LICENSE }}
 ```
